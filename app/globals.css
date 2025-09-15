@@ -1,0 +1,129 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg1: #292f36;
+  --color-bg2: #1a1e23;
+  --color-brand1: #12f7d6;
+  --color-brand2: #98faec;
+  --color-grey: #43454d;
+  --color-white: #ffffff;
+  --color-html: #e54f26;
+  --color-css: #2965f1;
+  --color-js: #e7a020;
+  --color-react: #61dafb;
+  --color-redux: #764abc;
+  --color-tailwind: #0ea5e9;
+  --color-next: #000;
+  --color-ts: #007acc;
+  --margin-main: 50px;
+}
+* {
+  scroll-behavior: smooth;
+}
+body {
+  background: #0a0a0a;
+  color: #ededed;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer components {
+  .bgtext-u {
+    @apply font-[family-name:var(--font-ubuntu)] font-[400] text-[117px] leading-[134px] max-md:text-[72px];
+  }
+  .h1-u {
+    @apply font-[family-name:var(--font-ubuntu)] font-[400] text-[64px] leading-[72px] max-md:text-[40px];
+  }
+  .h2-u {
+    @apply font-[family-name:var(--font-ubuntu)] font-[400] text-[32px] leading-[36px];
+  }
+  .button-u {
+    @apply font-[family-name:var(--font-ubuntu)] font-[400] text-[20px] leading-[24px];
+  }
+  .article-u {
+    @apply font-[family-name:var(--font-ubuntu)] font-[300] text-[16px] leading-[32px];
+  }
+  .para-u {
+    @apply font-[family-name:var(--font-ubuntu)] font-[300] text-[16px] leading-[18px];
+  }
+  .label-u-m {
+    @apply font-[family-name:var(--font-ubuntu)] font-[500] text-[14px] leading-[16px];
+  }
+  .label-u-l {
+    @apply font-[family-name:var(--font-ubuntu)] font-[300] text-[14px] leading-[16px];
+  }
+  .number-m {
+    @apply font-[family-name:var(--font-ibm-plex-mono)] font-[500] text-[48px] leading-[62px];
+  }
+  .h2-m {
+    @apply font-[family-name:var(--font-ibm-plex-mono)] font-[500] text-[32px] leading-[42px];
+  }
+  .logo-m {
+    @apply font-[family-name:var(--font-ibm-plex-mono)] font-[500] text-[32px] leading-[42px] max-md:text-[28px];
+  }
+  .menu-m {
+    @apply font-[family-name:var(--font-ibm-plex-mono)] font-[400] text-[24px] leading-[32px];
+  }
+  .media-m {
+    @apply font-[family-name:var(--font-ibm-plex-mono)] font-[400] text-[16px] leading-[24px];
+  }
+  .code-m {
+    @apply font-[family-name:var(--font-ibm-plex-mono)] font-[400] text-[14px] leading-[18px];
+  }
+  .para-m {
+    @apply font-[family-name:var(--font-ibm-plex-mono)] font-[400] text-[16px] leading-[20px];
+  }
+  .after-nav {
+    @apply p-2 relative rounded-full after:bg-white after:absolute after:bottom-1/2 after:left-15 after:p-2 after:rounded-xl after:translate-y-1/2 after:opacity-0 hover:after:opacity-100 after:duration-300 whitespace-nowrap text-black;
+  }
+}
+
+@layer utilities {
+  .bg-html {
+    background-color: var(--color-html);
+  }
+  .bg-css {
+    background-color: var(--color-css);
+  }
+  .bg-js {
+    background-color: var(--color-js);
+  }
+  .bg-next {
+    background-color: var(--color-next);
+  }
+  .bg-tailwind {
+    background-color: var(--color-tailwind);
+  }
+  .bg-ts {
+    background-color: var(--color-ts);
+  }
+  .bg-redux {
+    background-color: var(--color-redux);
+  }
+  .bg-react {
+    background-color: var(--color-react);
+  }
+  .text-html {
+    color: var(--color-html);
+  }
+  .text-css {
+    color: var(--color-css);
+  }
+  .text-js {
+    color: var(--color-js);
+  }
+  .text-next {
+    color: var(--color-next);
+  }
+  .text-tailwind {
+    color: var(--color-tailwind);
+  }
+  .text-ts {
+    color: var(--color-ts);
+  }
+  .text-redux {
+    color: var(--color-redux);
+  }
+  .text-react {
+    color: var(--color-react);
+  }
+}
