@@ -13,12 +13,12 @@ function Button({
   iconSize?: number;
   myhref?: string;
 }) {
-  const mainClass = `flex items-center justify-center gap-2 rounded-full button-u py-4 px-8 cursor-pointer ${
-    type === "solid"
-      ? "bg-brand1 text-black"
-      : type === "white"
-      ? "bg-white text-bg1"
-      : "bg-bg1 border-2 border-brand1 text-white"
+  const mainClass = `flex items-center justify-center gap-2 rounded-full button-u py-4 px-8 cursor-pointer text-sm md:text-base ${
+    type === 'solid'
+      ? 'bg-brand1 text-black'
+      : type === 'white'
+      ? 'bg-white text-bg1'
+      : 'bg-bg1 border-2 border-brand1 text-white'
   }`;
 
   const content = (

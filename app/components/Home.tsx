@@ -5,6 +5,7 @@ import { IoLocationOutline } from 'react-icons/io5';
 import { RiBriefcase3Line } from 'react-icons/ri';
 import { FiDownload } from 'react-icons/fi';
 import Button from './Button';
+import * as motion from 'motion/react-client';
 function Home() {
   const info = [
     {
@@ -24,12 +25,31 @@ function Home() {
     },
   ];
   const skills = ['HTML', 'CSS', 'JS', 'TS', 'React', 'Next'];
+
   return (
-    <section id='home' className='mb-main'>
-      <h1 className='bgtext-u text-center text-brand2 mb-17'>Developer</h1>
+    <section id='home' className='mb-main overflow-visible'>
+      <h1 className='bgtext-u text-center text-brand2 mb-17'>
+        {'Developer'.split('').map((e, i) => (
+          <motion.span
+            initial={{ opacity: 0, y: -100 }}
+            whileInView={{ opacity: 1, y: 100 }}
+            transition={{ delay: 0.1 * i }}
+            viewport={{ once: true, amount: 'some' }}
+            key={i}
+          >
+            {e}
+          </motion.span>
+        ))}
+      </h1>
 
       <div className='flex flex-col gap-10 mx-10 md:flex-row lg:w-4/5 lg:mx-auto'>
-        <div className='flex flex-col items-center gap-4 border-2 rounded-tl-[150px] rounded-br-[150px] py-6 px-15 shadow-[-2px_-2px_4px_0px_#12F7D6]'>
+        <motion.div
+          className='flex flex-col items-center gap-4 border-2 rounded-tl-[150px] rounded-br-[150px] py-6 px-15 shadow-[-2px_-2px_4px_0px_#12F7D6]'
+          initial={{ opacity: 0, x: -100 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6, ease: 'easeOut', delay: 0.7 }}
+          viewport={{ once: true, amount: 'some' }}
+        >
           <Image
             src={MyPic}
             alt='My profile picture'
@@ -47,7 +67,7 @@ function Home() {
               </span>
             ))}
           </div>
-          <div className='flex flex-wrap gap-5 max-w-[250px] justify-center'>
+          <div className='flex flex-wrap gap-4 max-w-[250px] justify-center'>
             {skills.map((item) => (
               <span
                 key={item}
@@ -63,8 +83,14 @@ function Home() {
             icon={FiDownload}
             myhref='Mina Mamdouh CV.pdf'
           />
-        </div>
-        <div className='flex flex-col gap-5'>
+        </motion.div>
+        <motion.div
+          className='flex flex-col gap-7 justify-center'
+          initial={{ opacity: 0, x: -100 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6, ease: 'easeOut', delay: 0.5 }}
+          viewport={{ once: true, amount: 'some' }}
+        >
           <span className='code-m text-brand2'>{`<h1>`}</span>
           <p className='h1-u pl-5'>
             Hey I&apos;m <span className='text-brand1'>Mina Mamdouh</span>,
@@ -84,7 +110,7 @@ function Home() {
               className='text-brand1 bg-grey rounded-full p-1'
             />
           </a>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

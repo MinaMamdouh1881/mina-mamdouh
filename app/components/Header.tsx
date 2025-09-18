@@ -35,15 +35,16 @@ function Header() {
   ];
   return (
     <motion.header
-      initial={{ y: -250 }}
-      animate={{ y: 0 }}
-      transition={{ type: 'spring', duration: 1, bounce: 0.5 }}
+      initial={{ opacity: 0, y: -250 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ type: 'spring', duration: 0.5 }}
       className='py-[32px] bg-bg1 flex justify-center items-center'
     >
       <div className='w-11/12 flex justify-between items-center'>
         <div className='grow'>
           <h2 className='sm:medium-m md:menu-m lg:logo-m text-white'>
-            <span className='text-brand1'>{'<MM/> '}</span>MinaMamdouh
+            <span className='text-brand1'>{'<MM/> '}</span>
+            <span className='max-sm:hidden'>MinaMamdouh</span>
           </h2>
         </div>
         <div className='flex justify-between items-center media-m md:menu-m text-white sm:grow'>

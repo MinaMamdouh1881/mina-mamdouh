@@ -1,5 +1,12 @@
-@import "tailwindcss";
+@import 'tailwindcss';
+@import 'swiper/css';
+@import 'swiper/css/navigation';
+@import 'swiper/css/pagination';
 
+html,
+body {
+  overflow-x: hidden;
+}
 @theme {
   --color-bg1: #292f36;
   --color-bg2: #1a1e23;
@@ -28,7 +35,7 @@ body {
 
 @layer components {
   .bgtext-u {
-    @apply font-[family-name:var(--font-ubuntu)] font-[400] text-[117px] leading-[134px] max-md:text-[72px];
+    @apply font-[family-name:var(--font-ubuntu)] font-[400] text-[117px] leading-[134px] max-md:text-[50px];
   }
   .h1-u {
     @apply font-[family-name:var(--font-ubuntu)] font-[400] text-[64px] leading-[72px] max-md:text-[40px];
@@ -73,7 +80,7 @@ body {
     @apply font-[family-name:var(--font-ibm-plex-mono)] font-[400] text-[16px] leading-[20px];
   }
   .after-nav {
-    @apply p-2 relative rounded-full after:bg-white after:absolute after:bottom-1/2 after:left-15 after:p-2 after:rounded-xl after:translate-y-1/2 after:opacity-0 hover:after:opacity-100 after:duration-300 whitespace-nowrap text-black;
+    @apply p-2 relative rounded-full after:bg-white after:absolute after:bottom-1/2 after:left-15 after:p-2 after:rounded-xl after:translate-y-1/2 after:opacity-0 hover:after:opacity-100 after:duration-300 whitespace-nowrap text-black after:pointer-events-none;
   }
 }
 
@@ -126,4 +133,10 @@ body {
   .text-react {
     color: var(--color-react);
   }
+}
+
+.swiper,
+.swiper-wrapper,
+.swiper-slide {
+  overflow: visible !important;
 }
