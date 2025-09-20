@@ -5,6 +5,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import { FaGithub, FaExternalLinkAlt, FaVideo } from 'react-icons/fa';
 import Script from 'next/script';
+import Image from 'next/image';
 
 export type DATA = {
   hasDemo: boolean;
@@ -58,11 +59,15 @@ export default function MySwiper({ data }: { data: DATA[] }) {
           <article className='bg-bg1 flex flex-col justify-between h-full group duration-300 hover:scale-103 hover:shadow-[0_0_8px_#12f7d6]'>
             <div className=''>
               <div className='overflow-hidden'>
-                <img
-                  src={project.image}
-                  alt={project.alt}
-                  className='scale-105 transition-transform duration-500 group-hover:scale-110 aspect-[19/10]'
-                />
+                <div className='relative w-full h-44'>
+                  <Image
+                    src={project.image}
+                    alt={project.alt}
+                    className='scale-105 transition-transform duration-500 group-hover:scale-110 aspect-[19/10]'
+                    loading='lazy'
+                    layout='fill'
+                  />
+                </div>
                 <h3 className='text-xl font-semibold mb-2 text-white h2-m px-4 py-2'>
                   {project.title}
                 </h3>
@@ -105,7 +110,7 @@ export default function MySwiper({ data }: { data: DATA[] }) {
             </div>
           </article>
           {/* SEO */}
-          <Script type='application/ld+json'>
+          <Script type='application/ld+json' id={`project-schema-${index}`}>
             {JSON.stringify({
               '@context': 'https://schema.org',
               '@type': 'CreativeWork',

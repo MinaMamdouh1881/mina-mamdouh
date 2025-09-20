@@ -6,7 +6,7 @@ function AboutMe() {
   return (
     <section
       id='about-me'
-      className='bg-[url(/about-me-bg.png)] bg-center bg-cover py-[50px] flex flex-col items-center px-12 md:px-36'
+      className='bg-[url(/about-me-bg.webp)] bg-center bg-cover py-[50px] flex flex-col items-center px-12 md:px-36'
     >
       <Module />
       <div className='flex flex-col items-center gap-10 min-[1200px]:flex-row'>
@@ -59,10 +59,11 @@ function AboutMe() {
           className='w-full md:w-[500px] h-[556px] relative'
         >
           <Image
-            src='/about-me-image.png'
+            src='/about-me-image.webp'
             alt='Mina Mamdouh - Web Developer profile illustration'
             layout='fill'
             className='object-cover rounded-2xl'
+            loading='lazy'
           />
         </motion.div>
       </div>
@@ -96,7 +97,7 @@ function AboutMe() {
               'React',
               'Next.js',
             ],
-            image: `${process.env.NEXT_PUBLIC_MY_DOMAIN}/my-pic.jpg`,
+            image: `${process.env.NEXT_PUBLIC_MY_DOMAIN}/my-pic.webp`,
             alumniOf: {
               '@type': 'CollegeOrUniversity',
               name: 'Faculty of Computers and Artificial Intelligence, Sohag University',

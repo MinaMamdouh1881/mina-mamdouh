@@ -50,7 +50,7 @@ function Skills() {
   return (
     <section
       id='skills'
-      className='bg-[url(/skills-bg.png)] bg-center bg-cover py-[50px] flex flex-col items-center px-12 md:px-36'
+      className='bg-[url(/skills-bg.webp)] bg-center bg-cover py-[50px] flex flex-col items-center px-12 md:px-36'
     >
       <Module
         title='Skills'

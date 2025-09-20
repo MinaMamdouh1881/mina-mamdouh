@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import MyPic from '@/public/my-pic.jpg';
+import MyPic from '@/public/my-pic.webp';
 import { MdOutlineMail } from 'react-icons/md';
 import { IoLocationOutline } from 'react-icons/io5';
 import { RiBriefcase3Line } from 'react-icons/ri';
@@ -61,6 +61,7 @@ function Home() {
             width={150}
             height={150}
             className='rounded-full border-4 border-brand1'
+            loading='lazy'
           />
           <h2 className='logo-m'>Mina Mamdouh</h2>
           <h3 className='code-m'>Front-End Developer</h3>

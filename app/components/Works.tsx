@@ -1,7 +1,6 @@
 import Module from './Module';
 import projects from '@/public/projects.json';
 import MySwiper from './MySwiper';
-import Script from 'next/script';
 
 function Works() {
   const mid = Math.ceil(projects.length / 2);
@@ -10,7 +9,7 @@ function Works() {
   return (
     <section
       id='works'
-      className='bg-[url(/works-bg.png)] bg-center bg-contain py-[50px] px-0 md:px-12'
+      className='bg-[url(/works-bg.webp)] bg-center bg-contain py-[50px] px-0 md:px-12'
     >
       <Module
         title='Works'

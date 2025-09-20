@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     siteName: 'Mina Mamdouh Portfolio',
     images: [
       {
-        url: '/my-pic.jpg',
+        url: '/my-pic.webp',
         width: 1200,
         height: 630,
         alt: 'Mina Mamdouh - Front-End Developer',
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     title: 'Mina Mamdouh | Front-End Developer',
     description:
       'React.js & Next.js Front-End Developer crafting responsive, modern web apps.',
-    images: ['/my-pic.jpg'],
+    images: ['/my-pic.webp'],
     creator: '@your_twitter_handle',
   },
   metadataBase: new URL(process.env.NEXT_PUBLIC_MY_DOMAIN!),
