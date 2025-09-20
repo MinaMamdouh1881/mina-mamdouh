@@ -1,6 +1,7 @@
 import Module from './Module';
 import projects from '@/public/projects.json';
 import MySwiper from './MySwiper';
+import Script from 'next/script';
 
 function Works() {
   const mid = Math.ceil(projects.length / 2);

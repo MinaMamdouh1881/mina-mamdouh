@@ -4,6 +4,7 @@ import { Navigation, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import { FaGithub, FaExternalLinkAlt, FaVideo } from 'react-icons/fa';
+import Script from 'next/script';
 
 export type DATA = {
   hasDemo: boolean;
@@ -54,7 +55,7 @@ export default function MySwiper({ data }: { data: DATA[] }) {
     >
       {data.map((project, index) => (
         <SwiperSlide key={index}>
-          <div className='bg-bg1 flex flex-col justify-between h-full group duration-300 hover:scale-103 hover:shadow-[0_0_8px_#12f7d6]'>
+          <article className='bg-bg1 flex flex-col justify-between h-full group duration-300 hover:scale-103 hover:shadow-[0_0_8px_#12f7d6]'>
             <div className=''>
               <div className='overflow-hidden'>
                 <img
@@ -102,7 +103,22 @@ export default function MySwiper({ data }: { data: DATA[] }) {
                 </a>
               </div>
             </div>
-          </div>
+          </article>
+          {/* SEO */}
+          <Script type='application/ld+json'>
+            {JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'CreativeWork',
+              name: project.title,
+              description: project.description,
+              image: project.image,
+              url: project.hasDemo ? project.demo : project.video,
+              creator: {
+                '@type': 'Person',
+                name: 'Mina Mamdouh',
+              },
+            })}
+          </Script>
         </SwiperSlide>
       ))}
       <div className='swiper-button-prev !text-white !bg-bg2 !rounded-full !p-4 !shadow-md hover:!bg-brand1 hover:!text-black hover:!scale-110 transition-all duration-300'></div>

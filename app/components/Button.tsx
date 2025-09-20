@@ -1,4 +1,4 @@
-import { IconType } from "react-icons";
+import { IconType } from 'react-icons';
 
 function Button({
   title,
@@ -8,7 +8,7 @@ function Button({
   myhref,
 }: {
   title: string;
-  type: "solid" | "white" | "stroke";
+  type: 'solid' | 'white' | 'stroke';
   icon?: IconType;
   iconSize?: number;
   myhref?: string;
@@ -28,7 +28,7 @@ function Button({
   );
 
   return myhref ? (
-    <a href={myhref} className={mainClass} download>
+    <a href={myhref} className={mainClass} download aria-label={title}>
       {content}
     </a>
   ) : (

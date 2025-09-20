@@ -24,12 +24,17 @@ function Home() {
       title: 'Full-Time / Remotely',
     },
   ];
-  const skills = ['HTML', 'CSS', 'JS', 'TS', 'React', 'Next'];
+  const skills = ['HTML', 'CSS', 'JavaScript', 'TypeScript', 'React', 'Next'];
 
   return (
-    <section id='home' className='mb-main overflow-visible'>
+    <section
+      id='home'
+      className='mb-main overflow-visible'
+      itemScope
+      itemType='https://schema.org/Person'
+    >
       <h1 className='bgtext-u text-center text-brand2 mb-17'>
-        {'Developer'.split('').map((e, i) => (
+        {'Mina Mamdouh'.split('').map((e, i) => (
           <motion.span
             initial={{ opacity: 0, y: -100 }}
             whileInView={{ opacity: 1, y: 100 }}
@@ -52,7 +57,7 @@ function Home() {
         >
           <Image
             src={MyPic}
-            alt='My profile picture'
+            alt='Mina Mamdouh - Profile Picture'
             width={150}
             height={150}
             className='rounded-full border-4 border-brand1'
@@ -92,19 +97,23 @@ function Home() {
           viewport={{ once: true, amount: 'some' }}
         >
           <span className='code-m text-brand2'>{`<h1>`}</span>
-          <p className='h1-u pl-5'>
+          <h2 className='h1-u pl-5'>
             Hey I&apos;m <span className='text-brand1'>Mina Mamdouh</span>,
             Front-End Developer
             <span className='code-m text-brand2'>{`</h1>`}</span>
-          </p>
+          </h2>
           <span className='code-m text-brand2'>{`<p>`}</span>
           <p className='para-m'>
             I help business grow by crafting amazing web experiences. If
             you&apos;re looking for a developer that likes to get stuff done,
           </p>
           <span className='code-m text-brand2'>{`</p>`}</span>
-          <a className='flex flex-row gap-5 h2-m text-brand1 items-center'>
-            {`Let's Talk`}{' '}
+          <a
+            href='mailto:minamamdouh345@gmail.com'
+            aria-label='Send me an email'
+            className='flex flex-row gap-5 h2-m text-brand1 items-center'
+          >
+            {`Let's Talk`}
             <MdOutlineMail
               size={32}
               className='text-brand1 bg-grey rounded-full p-1'

@@ -10,6 +10,7 @@ import { TbBrandTypescript } from 'react-icons/tb';
 import { SiRedux } from 'react-icons/si';
 import { FaReact } from 'react-icons/fa';
 import * as motion from 'motion/react-client';
+import Script from 'next/script';
 
 function Skills() {
   const skills = [
@@ -71,7 +72,11 @@ function Skills() {
             transition={{ duration: 0.5, delay: index * 0.1 }}
             viewport={{ once: true, amount: 0.5 }}
           >
-            <span className={`bg-${skill.name.toLowerCase()} p-8 rounded-full`}>
+            <span
+              className={`bg-${skill.name.toLowerCase()} p-8 rounded-full`}
+              role='img'
+              aria-label='HTML Icon'
+            >
               {skill.icon}
             </span>
             <p className={`h2-m text-${skill.name.toLowerCase()}`}>
@@ -80,6 +85,23 @@ function Skills() {
           </motion.div>
         ))}
       </div>
+      {/* SEO */}
+      <Script
+        id='skills-structured-data'
+        type='application/ld+json'
+        strategy='afterInteractive'
+      >
+        {JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'ItemList',
+          name: 'Mina Mamdouh Skills',
+          itemListElement: skills.map((skill, index) => ({
+            '@type': 'ListItem',
+            position: index + 1,
+            name: skill.name,
+          })),
+        })}
+      </Script>
     </section>
   );
 }
